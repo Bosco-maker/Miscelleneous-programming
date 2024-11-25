@@ -40,5 +40,5 @@ try:
         print(char + " -> " + str(no))
     
 except IOError as e:
-    print("error found")
+    print("error found"   + strerror(e.errno))
 
