@@ -1,7 +1,7 @@
 from os import strerror
 
 try:
-    src = open("sampleText.txt","rt")
+    src = open("sampleText.txt","wt")
     content = src.read()
 
     stat = {'a':0,
@@ -33,10 +33,12 @@ try:
     for char in content:
         char = char.lower()
         stat[char] += 1
+    
+    ori = list(stat.values())
+    print(ori)
     for char,no in stat.items():
         print(char + " -> " + str(no))
     
-
 except IOError as e:
-    print("error found"   + strerror(e.errno))
+    print("error found")
 
